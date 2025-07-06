@@ -1,0 +1,282 @@
+/* [project]/src/app/globals.css [app-client] (css) */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: #fff;
+  background: #0c0c0c;
+  font-family: var(--font-encode-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-bar {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+
+.nav-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.nav-logo {
+  width: 200px;
+}
+
+.nav-logo .logo {
+  width: 100%;
+  height: 100%;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-icons .icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #e5dfd9;
+}
+
+.nav-bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px 0;
+}
+
+.nav-links {
+  color: #e5dfd9;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.filter {
+  width: 100%;
+  max-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 30px 20px;
+  gap: 60px;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.filter-img {
+  width: 120px;
+  height: 120px;
+}
+
+.products-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.header-title h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #e5dfd9;
+}
+
+.header-title span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #e5dfd9;
+}
+
+.header-count {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-count h1 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #e5dfd9;
+}
+
+.header-icon {
+  font-size: 18px;
+  color: #e5dfd9;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 40px;
+  column-gap: 30px;
+  padding: 30px;
+}
+
+@media (width <= 1024px) {
+  .products-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .filter-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (width <= 768px) {
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filter-img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (width <= 480px) {
+  .nav-icons, .nav-bottom {
+    display: none;
+  }
+
+  .products-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .filter-img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.product-card {
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  background-color: #141414;
+  box-shadow: 0 4px 6px #0000001a;
+  transition: transform .2s ease-in-out;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #fff;
+  position: relative;
+}
+
+.product-bookmark {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 34px;
+  color: #0c0c0c;
+}
+
+.product-image img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.product-name {
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.product-title {
+  font-size: 18px;
+  font-weight: 500;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #e5dfd9;
+  letter-spacing: 1px;
+}
+
+.product-detail {
+  width: 100%;
+  padding: 5px 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-price {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.product-price p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #e5dfd9;
+  display: flex;
+  align-items: center;
+}
+
+.product-price h2 {
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: line-through;
+  color: #e5dfd9;
+}
+
+.product-price h1 {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2fc14f;
+}
+
+.product-icon {
+  font-size: 24px;
+  color: #e5dfd9;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=src_app_globals_b52d8e88.css.map*/
